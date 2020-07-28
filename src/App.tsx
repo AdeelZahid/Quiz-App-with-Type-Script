@@ -6,7 +6,7 @@ import QuestinCard from './components/QuestionCard';
 import {QuestionState} from './API';
 
 
-type AnswerObject = {
+export type AnswerObject = {
   question:string;
   answer: string;
   correct: boolean;
@@ -84,7 +84,7 @@ function App() {
         <button className="start" onClick={startTrivia}> Start</button>
       ): null}
 
-      {!gameOver ? <p className="score">Score</p> : null}
+      {!gameOver ? <p className="score">Score {score}</p> : null}
       {loading && <p>Loading Question ... </p>}
       
       {!gameOver && !loading && (
