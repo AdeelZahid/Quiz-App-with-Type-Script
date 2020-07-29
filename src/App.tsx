@@ -4,6 +4,9 @@ import {Difficulty} from './API';
 import QuestinCard from './components/QuestionCard';
 //types
 import {QuestionState} from './API';
+//styles
+// Styles
+import { GlobalStyle, Wrapper } from './App.styles';
 
 
 export type AnswerObject = {
@@ -77,7 +80,9 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <>
+    <GlobalStyle />
+    <Wrapper>
       <h1>React Quiz</h1>
       
       {gameOver || userAnswers.length ===  TOTAL_QUESTION ? (
@@ -102,9 +107,8 @@ function App() {
       {!gameOver && !loading && userAnswers.length === number + 1 && number !== TOTAL_QUESTION -1 ? (
         <button className="next" onClick={nextQuestion}>Next Question</button>
       ) : null } 
-
-
-    </div>
+</Wrapper>
+    </>
   );
 }
 
